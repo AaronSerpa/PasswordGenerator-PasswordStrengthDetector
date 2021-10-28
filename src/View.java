@@ -55,7 +55,6 @@ public class View extends JFrame
 		frame.add(mypanel, BorderLayout.CENTER);
 		frame.add(prompt, BorderLayout.NORTH);
 		frame.add(enter, BorderLayout.SOUTH);
-		//frame.add(testResults, BorderLayout.EAST);
 		frame.add(fieldPanel, BorderLayout.WEST);
 		frame.pack(); 
 		frame.setLocation(300, 90);
