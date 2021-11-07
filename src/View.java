@@ -7,23 +7,23 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.Line2D;
 import javax.swing.*;
-/**
- * Creates the frame
- * @author 
- *
- */
+
 public class View extends JFrame
 {
 	private String name;
 	private JFrame frame;
 	private JPanel mypanel;
 	private JPanel fieldPanel;
+	private JLabel input1;
+	private JLabel output1;
 	private JTextField passwordInput1;
+	private JLabel input2;
+	private JLabel output2;
 	private JTextField passwordInput2;
 	private JButton enter;
-	private JTextArea prompt;
-	private JTextArea testResults;
-	private JTextArea Password;
+	private JLabel prompt;
+	private JLabel testResults;
+	private JLabel Password;
 	
 	public View(String name) 
 	{
@@ -31,23 +31,38 @@ public class View extends JFrame
 		mypanel = new JPanel();
 		fieldPanel = new JPanel();
 		frame = new JFrame(name);
+		
+		input1 = new JLabel("Enter first keyword below:");
 		passwordInput1 = new JTextField();
 		passwordInput1.setPreferredSize(new Dimension(150, 20));
+		output1 = new JLabel("");
+		input2 = new JLabel("Enter second keyword below:");
 		passwordInput2 = new JTextField();
 		passwordInput2.setPreferredSize(new Dimension(150, 20));
+		output2 = new JLabel("");
 		
 		enter = new JButton("Enter");
-		prompt = new JTextArea("This program will generate a password for you based on 2 keywords that you provide \nIt will then provide test reults for your password based on several types of attacks");
-		testResults = new JTextArea("TEST STRING \nBLAHBLAHBLAH!!!");
-		Password = new JTextArea("password destination");
+		enter.setBackground(Color.RED); // Sets the background color of the button to red
+        enter.setForeground(Color.WHITE); // Sets the foreground color of the button to white
+		prompt = new JLabel("<html><body style=\"text-align:center;\"><h2>Password Generator and Stength Detector</h2>This program will generate a password for you based on 2 keywords that you provide<br>It will then provide test results for your password based on several types of attacks<br><br><body></html>", SwingConstants.CENTER);
+		testResults = new JLabel("<html><body>Test Results:<br><br>The test results will be printed here</body></html>");
+		testResults.setOpaque(true);
+		testResults.setBackground(Color.ORANGE);
+		Password = new JLabel("<html><body>Suggested Password:<br><br>The suggested password will be printed here</body></html>");
+		Password.setOpaque(true);
+		Password.setBackground(Color.ORANGE);
 		frame.setResizable(false);
 		frame.setPreferredSize(new Dimension(650,550));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //display it
 		
-		fieldPanel.setLayout(new GridLayout(2,1,0,50));
+		fieldPanel.setLayout(new GridLayout(6,1,0,5));
 		fieldPanel.setBorder(BorderFactory.createEmptyBorder(100,0,100,0));
+		fieldPanel.add(input1);
 		fieldPanel.add(passwordInput1);
+		fieldPanel.add(output1);
+		fieldPanel.add(input2);
 		fieldPanel.add(passwordInput2);
+		fieldPanel.add(output2);
 		
 		mypanel.setLayout(new GridLayout(2,1,0,20));
 		mypanel.add(Password);
