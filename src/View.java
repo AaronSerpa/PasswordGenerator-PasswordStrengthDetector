@@ -43,7 +43,7 @@ public class View extends JFrame
 		
 		enter = new JButton("Enter");
 		enter.setBackground(Color.RED); // Sets the background color of the button to red
-        enter.setForeground(Color.WHITE); // Sets the foreground color of the button to white
+		enter.setForeground(Color.WHITE); // Sets the foreground color of the button to white
 		prompt = new JLabel("<html><body style=\"text-align:center;\"><h2>Password Generator and Stength Detector</h2>This program will generate a password for you based on 2 keywords that you provide<br>It will then provide test results for your password based on several types of attacks<br><br><body></html>", SwingConstants.CENTER);
 		testResults = new JLabel("<html><body>Test Results:<br><br>The test results will be printed here</body></html>");
 		testResults.setOpaque(true);
