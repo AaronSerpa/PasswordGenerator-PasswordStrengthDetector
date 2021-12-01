@@ -83,6 +83,10 @@ public class Model
 			strength = strength + 1;
 		}
 		
+		// IMPORTANT: The easyPasswords.txt file contains 200 most common passwords 
+		// These passwords were found using the following web site:
+		// https://nordpass.com/most-common-passwords-list/
+		
 		// creates scanner object that takes in easyPasswords.txt file as input
 		Scanner scanner = null;
 		try {
