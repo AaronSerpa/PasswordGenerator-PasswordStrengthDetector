@@ -32,6 +32,8 @@ public class Controller
 			}
         	
         });
+		
+		
 	}
 	
 	/*
@@ -42,7 +44,8 @@ public class Controller
 	public void GetPassword()
 	{
 		String[] inputs = view.getInputs();
-		Password_Generator gen = new Password_Generator(inputs[0], inputs[1]);
+		int symbCount = view.getSelectedSymb();
+		Password_Generator gen = new Password_Generator(inputs[0], inputs[1],symbCount);
 		String password = gen.GeneratePassword();
 		String strength = model.StrengthDetector(password);
 		view.givePassword(password);

@@ -43,11 +43,11 @@ public class Model
 		// determines changes in value of strength based on password length
 		if(password.length() > 16)
 		{
-			strength = strength + 2;
+			strength += 2;
 		}
 		else if(password.length() > 8)
 		{
-			strength = strength + 1;
+			strength += 1;
 		}
 		
 		// determines changes in value of strength based on presence of special characters in the password
@@ -55,7 +55,7 @@ public class Model
 		{
 			if(password.contains(special.get(i)))
 			{
-				strength = strength + 1;
+				strength += 1;
 				break;
 			}
 		}

@@ -18,12 +18,15 @@ public class View extends JFrame
 	private JLabel output1;
 	private JTextField passwordInput1;
 	private JLabel input2;
+	private JLabel symbCount;
 	private JLabel output2;
 	private JTextField passwordInput2;
 	private JButton enter;
 	private JLabel prompt;
 	private JLabel testResults;
 	private JLabel Password;
+	private JComboBox<Integer> symbDrop;
+	private Integer[] SymbCArr = {1, 2, 3, 4, 5};
 	
 	public View(String name) 
 	{
@@ -41,6 +44,10 @@ public class View extends JFrame
 		passwordInput2.setPreferredSize(new Dimension(150, 20));
 		output2 = new JLabel("");
 		
+		symbCount = new JLabel("Select how many Special Characters:");
+		symbDrop = new JComboBox<Integer>(SymbCArr);
+		
+		
 		enter = new JButton("Enter");
 		enter.setBackground(Color.RED); // Sets the background color of the button to red
         enter.setForeground(Color.WHITE); // Sets the foreground color of the button to white
@@ -57,7 +64,7 @@ public class View extends JFrame
 		frame.setPreferredSize(new Dimension(650,550));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //display it
 		
-		fieldPanel.setLayout(new GridLayout(6,1,0,5));
+		fieldPanel.setLayout(new GridLayout(8,1,0,5));
 		fieldPanel.setBorder(BorderFactory.createEmptyBorder(100,0,100,0));
 		fieldPanel.add(input1);
 		fieldPanel.add(passwordInput1);
@@ -65,6 +72,8 @@ public class View extends JFrame
 		fieldPanel.add(input2);
 		fieldPanel.add(passwordInput2);
 		fieldPanel.add(output2);
+		fieldPanel.add(symbCount);
+		fieldPanel.add(symbDrop);
 		
 		mypanel.setLayout(new GridLayout(2,1,0,20));
 		mypanel.add(Password);
@@ -104,5 +113,16 @@ public class View extends JFrame
 	public void giveStrength(String str)
 	{
 		testResults.setText("<html><body>Test Results:<br><br>"+str+"</body></html>");
+	}
+	
+	/**
+	 * grabs selection of symbol count as a string from the dropdown on the UI.
+	 * @return Number selected as the string.
+	 */
+	public int getSelectedSymb()
+	{
+		int selected = (int)symbDrop.getSelectedItem();
+		return selected;
+		
 	}
 }

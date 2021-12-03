@@ -4,6 +4,7 @@ import java.lang.*;
  * Houses the means of generating passwords
  * takes two strings as inputs that contain info from the user
  * these two strings are then used to create a password
+ * Custom represents the selected amount of special characters desired in the password.
  * @author 
  *
  */
@@ -11,11 +12,13 @@ public class Password_Generator
 {
 	String personal1; 
 	String personal2;
+	int custom;
 
-	public Password_Generator(String p1, String p2)
+	public Password_Generator(String p1, String p2, int custom)
 	{
 		personal1 = p1;
 		personal2 = p2;
+		this.custom = custom;
 
 	}
 
@@ -103,29 +106,29 @@ public class Password_Generator
 		//1-> add some special characters to start
 		if(random == 1)
 		{
-			//generate random number
 			String chars= "";
-			random = rand.nextInt(11)+33; // ascii values of different symbols
-			chars = chars+(char)random;
-			random = rand.nextInt(11)+33; // ascii values of different symbols
-			chars = chars+(char)random;
-			random = rand.nextInt(11)+33; // ascii values of different symbols
-			chars = chars+(char)random;
+			for(int i = 0; i < custom; i++)
+			{
+				//generate random number
+				random = rand.nextInt(11)+33; // ascii values of different symbols
+				chars = chars+(char)random;
+				
+			}
 			temp = chars+temp;
 		}
 
 		//2-> add some special characters to end
 		else if (random == 2)
 		{
-			//generate random number
 			String chars= "";
-			random = rand.nextInt(11)+33; // ascii values of different symbols
-			chars = chars+(char)random;
-			random = rand.nextInt(11)+33; // ascii values of different symbols
-			chars = chars+(char)random;
-			random = rand.nextInt(11)+33; // ascii values of different symbols
-			chars = chars+(char)random;
-			temp = temp+chars;
+			for(int i = 0; i < custom; i++)
+			{
+				//generate random number
+				random = rand.nextInt(11)+33; // ascii values of different symbols
+				chars = chars+(char)random;
+				
+			}
+			temp = temp + chars;
 		}
 		//generate random number
 		random = rand.nextInt(20)+1; 
