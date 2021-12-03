@@ -91,7 +91,7 @@ public class View extends JFrame
 		return inputs;
 	}
 	
-	public JButton getEneter()
+	public JButton getEnter()
 	{
 		return enter;
 	}

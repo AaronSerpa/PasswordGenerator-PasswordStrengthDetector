@@ -16,7 +16,7 @@ public class Controller
 	{
 		model = m;
 		view = v;
-		JButton enter = view.getEneter();
+		JButton enter = view.getEnter();
 		enter.addActionListener(new ActionListener() {
 
 			@Override
