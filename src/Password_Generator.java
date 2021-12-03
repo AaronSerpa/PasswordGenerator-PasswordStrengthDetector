@@ -24,6 +24,7 @@ public class Password_Generator
 
 	/**
 	 * uses the two instance variables given and mutates them into a password
+	 * also utilizes int custom to determine number of special characters to add
 	 * @return
 	 */
 	public String GeneratePassword()

@@ -8,6 +8,11 @@ import java.awt.event.ActionListener;
 import java.awt.geom.Line2D;
 import javax.swing.*;
 
+/**
+ *  Extended from View. More in-depth UI
+ * @author
+ *
+ */
 public class View extends JFrame
 {
 	private String name;
